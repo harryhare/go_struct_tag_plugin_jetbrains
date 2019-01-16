@@ -1,0 +1,34 @@
+<idea-plugin>
+    <id>com.planetexpress.go_struct_tag_generator</id>
+    <name>Generate struct tags for golang</name>
+    <vendor email="harryhare@163.com" url="">harryhare</vendor>
+    <version>1.0</version>
+
+    <description><![CDATA[
+    Generate struct tags for golang<br>
+    include:<br>
+    json tag<br>
+    bson tag<br>
+    only need to click the menu once, instead of use autocomplete many times to write every tag.
+    <em>golang</em>
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.lang</depends>
+    <idea-version since-build="162">2018.2.7</idea-version>
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+
+        <group id="TagPlugin.Menu" text="Tags" description="add tags for go struct">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action id="TagPlugin.Json" class="GenerateJsonAction" text="Generate Json tags" description="generate json tag for go struct"/>
+            <action id="TagPlugin.Bson" class="GenerateBsonAction" text="Generate Bson tags" description="generate bson tag for go struct"/>
+            <action id="TagPlugin.Both" class="GenerateBothAction" text="Generate Both tags" description="generate bson and json tag for go struct"/>
+        </group>
+    </actions>
+</idea-plugin>
