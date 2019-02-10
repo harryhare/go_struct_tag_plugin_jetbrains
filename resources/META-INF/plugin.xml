@@ -2,16 +2,29 @@
     <id>com.planetexpress.go_struct_tag_generator</id>
     <name>Generate struct tags for golang</name>
     <vendor email="harryhare@163.com" url="">harryhare</vendor>
-    <version>1.0</version>
+    <version>1.2.8</version>
 
     <description><![CDATA[
-    Generate struct tags for golang<br>
-    include:<br>
-    json tag<br>
-    bson tag<br>
-    only need to click the menu once, instead of use autocomplete many times to write every tag.
-    <em>golang</em>
-    ]]></description>
+       <p><strong>Feature:</strong><p>
+       <p>Edit struct tags for golang.<p>
+       <p>Include:<p>
+            <ul>
+                <li>standard json tags </li>
+                <li>standard bson tags </li>
+                <li>standard both tags </li>
+                <li>camel json tags </li>
+                <li>camel bson tags </li>
+                <li>camel both tags </li>
+                <li>remove tags </li>
+            </ul>
+
+        <p>Only need to click the menu once, instead of use autocomplete many times to write every tag.<p>
+        <p><p>
+        <p><strong>Usage:</strong><p>
+        <p>Select the codes need to convert(need to include the whole struct type, only select the fields won't work)<p>
+        <p>Then click the Tags menu (the last one in the main menu).<p>
+
+   ]]></description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
@@ -23,12 +36,22 @@
 
     <actions>
         <!-- Add your actions here -->
-
         <group id="TagPlugin.Menu" text="Tags" description="add tags for go struct">
             <add-to-group group-id="MainMenu" anchor="last"/>
-            <action id="TagPlugin.Json" class="GenerateJsonAction" text="Generate Json tags" description="generate json tag for go struct"/>
-            <action id="TagPlugin.Bson" class="GenerateBsonAction" text="Generate Bson tags" description="generate bson tag for go struct"/>
-            <action id="TagPlugin.Both" class="GenerateBothAction" text="Generate Both tags" description="generate bson and json tag for go struct"/>
+            <action id="TagPlugin.Json" class="GenerateJsonAction" text="Generate Json tags"
+                    description="generate json tags for go struct"/>
+            <action id="TagPlugin.Bson" class="GenerateBsonAction" text="Generate Bson tags"
+                    description="generate bson tags for go struct"/>
+            <action id="TagPlugin.Both" class="GenerateBothAction" text="Generate Both tags"
+                    description="generate bson and json tags for go struct"/>
+            <action id="TagPlugin.CamelJson" class="GenerateCamelJsonAction" text="Generate Camel Json tags"
+                    description="generate json tags for go struct"/>
+            <action id="TagPlugin.CamelBson" class="GenerateCamelBsonAction" text="Generate Camel Bson tags"
+                    description="generate bson tags for go struct"/>
+            <action id="TagPlugin.CamelBoth" class="GenerateCamelBothAction" text="Generate Camel Both tags"
+                    description="generate bson and json tags for go struct"/>
+            <action id="TagPlugin.Remove" class="RemoveTagAction" text="Remove tags"
+                    description="remove tags for go struct"/>
         </group>
     </actions>
 </idea-plugin>
